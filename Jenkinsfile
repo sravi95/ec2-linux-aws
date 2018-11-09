@@ -2,16 +2,18 @@ pipeline{
       agent any
 
       stages {
-           stage{'Checkout'}{
+           stage{'Build'}{
                steps {
-                   Checkout scm                  }
+                   sh 'mvn install'                  }
                    }
-            stage{'Build'} {
+            stage{'Test'} {
                 steps {
-                    sh 'mvn install'
+                    sh 'mvn test'
 
                      }
                     }
                 }
              }
+
+
 
