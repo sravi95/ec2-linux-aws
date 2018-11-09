@@ -2,12 +2,12 @@
 pipeline{
       agent any
 
-      stages {
-           stage{'Build'}{
+      stages{
+           stage{'Build'}  {
                steps {
                    sh 'mvn install'                  }
                    }
-            stage{'Test'} {
+            stage{'Test'}  {
                 steps {
                     sh 'mvn test'
 
